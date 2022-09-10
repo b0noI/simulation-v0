@@ -38,6 +38,18 @@ public class BallAgent : Agent
         controlSignal.x = actionX;
         controlSignal.z = actionZ;
         rigidBody.AddForce(controlSignal * 10);
+
+        var distanceToTarget = Vector3.Distance(this.transform.localPosition, 
+            this.Target.localPosition);
+
+        if (distanceToTarget < 1.42f)
+        {
+            SetReward(1.0f);
+            EndEpisode();
+        } else if (this.transform.localPosition.y < 0) 
+        {
+            EndEpisode();
+        }
     }
 
     // Start is called before the first frame update
