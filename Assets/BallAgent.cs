@@ -21,6 +21,14 @@ public class BallAgent : Agent
         this.Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
     }
 
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        sensor.AddObservation(this.transform.localPosition);
+        sensor.AddObservation(this.rigidBody.velocity.x);
+        sensor.AddObservation(this.rigidBody.velocity.z);
+        sensor.AddObservation(this.Target.localPosition);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
