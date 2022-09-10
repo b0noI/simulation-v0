@@ -52,6 +52,13 @@ public class BallAgent : Agent
         }
     }
 
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActionsOut = actionsOut.ContinuousActions;
+        continuousActionsOut[0] = Input.GetAxis("Horizontal");
+        continuousActionsOut[1] = Input.GetAxis("Vertical");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
