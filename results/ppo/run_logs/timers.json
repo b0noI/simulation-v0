@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1662847744",
+        "python_version": "3.9.7 | packaged by conda-forge | (default, Sep 29 2021, 19:22:19) \n[Clang 11.1.0 ]",
+        "command_line_arguments": "/Users/vkovalevskyi/miniforge3/envs/mlsim/bin/mlagents-learn",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.0.post3",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1662847745"
+    },
+    "total": 0.472107333,
+    "count": 1,
+    "self": 0.003114374000000031,
+    "children": {
+        "run_training.setup": {
+            "total": 0.014684291999999988,
+            "count": 1,
+            "self": 0.014684291999999988
+        },
+        "TrainerController.start_learning": {
+            "total": 0.454308667,
+            "count": 1,
+            "self": 5.908400000004255e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 0.454175125,
+                    "count": 1,
+                    "self": 0.454175125
+                },
+                "TrainerController._save_models": {
+                    "total": 7.445799999994396e-05,
+                    "count": 1,
+                    "self": 7.445799999994396e-05
+                }
+            }
+        }
+    }
+}
