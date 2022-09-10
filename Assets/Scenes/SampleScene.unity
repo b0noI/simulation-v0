@@ -527,6 +527,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  Target: {fileID: 636665507}
 --- !u!54 &887326681
 Rigidbody:
   m_ObjectHideFlags: 0
