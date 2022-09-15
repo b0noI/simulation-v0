@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1662918744",
+        "python_version": "3.9.7 | packaged by conda-forge | (default, Sep 29 2021, 19:22:19) \n[Clang 11.1.0 ]",
+        "command_line_arguments": "/Users/vkovalevskyi/miniforge3/envs/mlsim/bin/mlagents-learn Assets/config/BallAgent.yaml --run-id=BallAgent6",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.0.post3",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1662918774"
+    },
+    "total": 29.392770375,
+    "count": 1,
+    "self": 0.016821042000003672,
+    "children": {
+        "run_training.setup": {
+            "total": 0.012308915999999948,
+            "count": 1,
+            "self": 0.012308915999999948
+        },
+        "TrainerController.start_learning": {
+            "total": 29.363640417,
+            "count": 1,
+            "self": 0.0008587079999990976,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 29.362744792,
+                    "count": 1,
+                    "self": 29.362744792
+                },
+                "trainer_threads": {
+                    "total": 1.250000000396767e-06,
+                    "count": 1,
+                    "self": 1.250000000396767e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 3.5666999998795745e-05,
+                    "count": 1,
+                    "self": 3.5666999998795745e-05
+                }
+            }
+        }
+    }
+}

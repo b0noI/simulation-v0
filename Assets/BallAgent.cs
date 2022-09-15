@@ -10,6 +10,7 @@ public class BallAgent : Agent
 
     public Transform Target;
     Rigidbody rigidBody;
+    private float lastDistance;
 
     public override void OnEpisodeBegin()
     {
@@ -20,6 +21,7 @@ public class BallAgent : Agent
             this.transform.localPosition = new Vector3(0, 0.5f, 0);
         }
         this.Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
+        this.lastDistance = -1;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -44,11 +46,20 @@ public class BallAgent : Agent
 
         if (distanceToTarget < 1.42f)
         {
-            SetReward(1.0f);
+            AddReward(1.0f);
             EndEpisode();
-        } else if (this.transform.localPosition.y < 0) 
+        } else 
         {
-            EndEpisode();
+            if (this.lastDistance == -1) {
+                this.lastDistance = distanceToTarget;
+            } else {
+                if (this.lastDistance <= distanceToTarget) {
+                    AddReward(-0.01f);
+                    EndEpisode();
+                } else {
+                    AddReward(-0.01f);
+                }
+            }
         }
     }
 
